@@ -42,11 +42,33 @@ const membersTeam = [
     
 ]
 
+const cardMember = document.querySelector('.my-container')
+console.log(cardMember)
 
 for(let i = 0; i < membersTeam.length; i++) {
     const thisMember = membersTeam[i];
     // console.log(`${thisMember.name} ${thisMember.role} ${thisMember.img}`);
     for(let key in thisMember) {
     console.log(key + ': ' + thisMember[key]);
+    }
+    cardMember.innerHTML += `
+    <div class="card" style="width: 18rem;">
+        <img src="css/img/${thisMember.img}" alt="img-member">
+        <div class="card-body">
+          <h5 class="card-title">Member Team</h5>
+          
+        </div>
+        <ul class="list-group list-group-flush member">
+          <li class="list-group-item">NAME : ${thisMember.name}</li>
+          <li class="list-group-item">ROLE : ${thisMember.role}</li>
+        </ul>
+        <div class="card-body">
+          
+          <a href="#" class="card-link">Linkedim link</a>
+        </div>
+      </div>
+    `
 }
-}
+
+ // <li class="list-group-item">${thisMember.name}</li>
+    // <li class="list-group-item">${thisMember.name}</li>
